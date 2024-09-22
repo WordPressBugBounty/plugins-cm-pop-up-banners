@@ -1,0 +1,49 @@
+#no-data-to-show{
+    text-align: center;
+    padding: 28px;
+}
+.result-container{
+    padding: 10px;
+}
+input.datepicker{
+    background-color: #fff!important;
+    width: 110px;
+    font-weight: bold;
+}
+.CM-popupflyin-statistics-form button{
+    padding: 2px 10px 2px 10px;
+}
+.CM-popupflyin-statistics-form input[type="radio"]{
+    margin-left: 10px;
+}
+.submit-button-container{
+    margin-left: 20px!important;
+}
+.statistics-result-message-red{
+    color: red;
+}
+#server_load_graph{
+     width:100%;
+     height:500px;
+     display:none;
+     margin-bottom: 40px;
+}
+.flot-x-axis div.flot-tick-label { 
+    /* Rotate Axis Labels */
+    transform: translateX(60%) rotate(90deg); /* CSS3 */
+    transform-origin: 0 0;
+    
+    -ms-transform: translateX(60%) rotate(90deg); /* IE */
+    -ms-transform-origin: 0 0;
+
+    -moz-transform: translateX(60%) rotate(90deg); /* Firefox */
+    -moz-transform-origin: 0 0;
+
+    -webkit-transform: translateX(60%) rotate(90deg); /* Safari and Chrome */
+    -webkit-transform-origin: 0 0;
+
+    -o-transform: translateX(60%) rotate(90deg); /* Opera */
+    -o-transform-origin: 0 0;
+    
+    padding-left: 5px
+}

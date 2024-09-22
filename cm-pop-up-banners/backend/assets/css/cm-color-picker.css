@@ -1,0 +1,4 @@
+input[type="text"].cm-color-picker {
+	width: 80px !important;
+	min-width: 80px !important;
+}

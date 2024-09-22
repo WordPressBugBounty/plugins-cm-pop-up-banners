@@ -1,0 +1,40 @@
+<?php
+global $availableCampaigns;
+?>
+<div class="CM-popupflyin-statistics-form">
+<!--    <label for="access-log-time-range">Filter by:</label>
+    <select name="access-log-time-range" id="access-log-time-range">
+        <option value="hour">Last hour</option>
+        <option value="day">Last day</option>
+        <option value="week">Last week</option>
+        <option value="month">Last month</option>
+        <option value="six_months">Recent 6 months</option>
+    </select>-->
+    <label for="access-log-date-from">Date from:</label>
+    <input type="text" class="datepicker" readonly="true" name="access-log-date-from" id="access-log-date-from" value="<?php echo date("Y-m-01");?>">
+    <label for="access-log-date-to">Date to:</label>
+    <input type="text" class="datepicker" readonly="true" name="access-log-date-to" id="access-log-date-to" value="<?php echo date("Y-m-d");?>">
+    <select id="access-log-campaign-id"  name="access-log-campaign-id">
+        <option value="0">All Campaigns</option>
+        <?php
+        if(!empty($availableCampaigns)){
+            foreach($availableCampaigns AS $oneCampaign){
+                ?>
+        <option value="<?php echo $oneCampaign->ID?>"><?php echo $oneCampaign->post_title?></option>
+                <?php
+            }
+        }
+        ?>
+    </select>
+    <input type="hidden"  name="access-log-display-type" id="access-log-display-type" value="days">
+    <!--<label for="access-log-display-type">Show by:</label>-->
+<!--    <select name="access-log-display-type" id="access-log-display-type">
+        <option value="days">Days</option>
+        <option value="weeks">Weeks</option>
+    </select>-->
+    <span class="submit-button-container">
+        <button id="send-statistics-data-access-log">Filter</button>
+        <button id="clear-data-access-log">Clear Dates</button>
+    </span>
+</div>
+<div id="CM-popupflyin-statistics-access-log-result-container" class="result-container"></div>

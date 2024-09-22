@@ -1,0 +1,18 @@
+<div class="clear"></div>
+<?php do_action('CMPOPFLY_show_messages'); ?>
+<?php
+if( !empty($messages) ):
+    foreach($messages as $message):
+        ?><div class="updated"><p><?php echo $message; ?></p></div><?php
+    endforeach;
+endif;
+?>
+
+<?php require('statistics/top.phtml'); ?>
+
+<br>
+<div id="tabs">
+    <div class="onlyinpro">
+        Import/Export module is only available in Pro version.
+    </div>
+</div>

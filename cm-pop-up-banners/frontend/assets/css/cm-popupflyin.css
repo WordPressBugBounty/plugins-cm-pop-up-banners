@@ -1,0 +1,5 @@
+body { overflow-x: hidden; }
+#cmpopfly-widget-container-wrapper { z-index: 99999999; }
+#cmpopfly-widget-container { z-index: 99999999 !important; }
+#ouibounce-modal .modal-body { width: 100%; }
+#cmpopfly-widget-container .show { display: block !important; }
