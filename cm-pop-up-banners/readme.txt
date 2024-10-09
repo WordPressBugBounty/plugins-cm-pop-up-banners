@@ -5,7 +5,7 @@ Contributors: CreativeMindsSolutions
 Tags: popup, popups, popup builder, popup maker, wp popup
 Requires at least: 5.4.0
 Tested up to: 6.6
-Stable Tag: 1.7.3
+Stable Tag: 1.7.4
 Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -95,6 +95,10 @@ List of all [WordPress Plugins](https://www.cminds.com) by CreativeMinds
 2. Activate the Popup plugin through the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+= 1.7.4 =
+Release Date: 9 Oct 2024
+* Fixed security issues
 
 = 1.7.3 =
 Release Date: 19 Aug 2024
