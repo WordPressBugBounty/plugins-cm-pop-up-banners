@@ -4,8 +4,8 @@ Author: CreativeMindsSolutions
 Contributors: CreativeMindsSolutions
 Tags: popup, popups, popup builder, popup maker, wp popup
 Requires at least: 5.4.0
-Tested up to: 6.6
-Stable Tag: 1.7.4
+Tested up to: 6.7
+Stable Tag: 1.7.5
 Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -75,7 +75,6 @@ The [Popup Maker Plugin Premium editions](https://www.cminds.com/wordpress-plugi
 > * Show X amount of times per customer: You can define that the campaign will show X amount of time per a specific customer until it stops
 > * Target Specific Users: Set pop up campaign to target logged-in or non-logged-in users
 
-
 ==  Follow Us ==
 
 [Blog](https://www.cminds.com/category/wordpress/) | [Twitter](http://twitter.com/cmplugins) | [LinkedIn](https://www.linkedin.com/company/creativeminds) | [YouTube](https://www.youtube.com/user/cmindschannel) | [Pinterest](http://www.pinterest.com/cmplugins/) | [FaceBook](https://www.facebook.com/cmplugins/)
@@ -94,10 +93,22 @@ List of all [WordPress Plugins](https://www.cminds.com) by CreativeMinds
 1. Upload `cm-pop-up-banners-for-wordpress` folder to the `/wp-content/plugins/` directory
 2. Activate the Popup plugin through the 'Plugins' menu in WordPress.
 
+== Screenshots ==
+
+1. Example of a Popup.
+2. Graph showing PopUp campaign activity (pro only).
+3. Statistics of campaing and popup activity (pro only).
+4. Pop up ampaign editing screen.
+5. List of all popup campaings in admin dashboard.
+
 == Changelog ==
 
+= 1.7.5 =
+Release Date: 06 Nov 2024
+* Added pro version settings as a showcase
+
 = 1.7.4 =
-Release Date: 9 Oct 2024
+Release Date: 09 Oct 2024
 * Fixed security issues
 
 = 1.7.3 =
@@ -166,12 +177,4 @@ Release Date: 2nd Nov 2022
 
 = 1.5.8 =
 Release Date: 2nd Nov 2022
-* Update shortcode in settings view file 
-
-== Screenshots ==
-
-1. Example of a Popup.
-2. Graph showing PopUp campaign activity (pro only).
-3. Statistics of campaing and popup activity (pro only).
-4. Pop up ampaign editing screen.
-5. List of all popup campaings in admin dashboard.
+* Update shortcode in settings view file

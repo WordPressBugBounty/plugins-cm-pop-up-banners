@@ -3,7 +3,7 @@ use com\cminds\popupfly\CMPopUpBannersBackend;
 ?>
 <div class="my_meta_control cm-help-items-metacontrol">
     <p class="onlyinpro">
-        <?php _e('(Only in Pro) Add new Banner Items by using the "Add Banner Item" button.  Rearrange the order by dragging and dropping.', ''); ?>
+        <?php _e('<span class="field-info"><span>(Only in Pro)</span> Add new Banner Items by using the "Add Banner Item" button.  Rearrange the order by dragging and dropping.</span>', ''); ?>
     </p>
     <?php
     wp_print_styles('editor-buttons');

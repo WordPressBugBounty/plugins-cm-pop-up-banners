@@ -1,5 +1,4 @@
 <?php
-
 namespace com\cminds\popupfly;
 
 class CMPOPFLY_Settings extends Settings {
@@ -9,7 +8,8 @@ class CMPOPFLY_Settings extends Settings {
 
     public static function init() {
         self::load_config();
-
+		
+		add_action( 'admin_enqueue_scripts', [__CLASS__, 'enqueueAssets']);
         add_action(self::abbrev('_save_options_after'), [__CLASS__, 'beforeSaveSettings'], 10, 2);
         add_action(self::abbrev('_save_options_after'), [__CLASS__, 'afterSaveSettings'], 100, 2);
         add_filter(self::abbrev('_before_saving_option'), [__CLASS__, 'beforeSaveOption'], 10, 2);
@@ -54,6 +54,9 @@ class CMPOPFLY_Settings extends Settings {
     }
 
     public static function afterSaveSettings($post, $messages) {
+		
+		update_option('cmpopfly_custom_post_type_support', $post["cmpopfly_custom_post_type_support"]);
+			
         $enqueeFlushRules = false;
         /*
          * Update the page options

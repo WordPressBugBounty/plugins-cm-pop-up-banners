@@ -1,5 +1,4 @@
 <?php
-
 namespace com\cminds\popupfly;
 
 use com\cminds\popupfly\CMPopUpBannersShared;

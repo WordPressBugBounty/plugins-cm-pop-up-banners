@@ -456,15 +456,24 @@ class CMPopUpBannersShared {
         if ( !empty($widgetConfig[ 'cm-campaign-thank' ]) && $widgetConfig[ 'cm-campaign-thank' ] == '1' && !$cmpopfly_reg_thank_you ) {
             return $widgetOutput;
         }
+		
+		if(!isset($widgetConfig[ 'cm-campaign-widget-type' ])) {
+			$widgetConfig[ 'cm-campaign-widget-type' ] = 'popup';
+		}
 
         if ( !empty( $widgetConfig[ 'cm-campaign-widget-type' ] ) ) {
             switch ( $widgetConfig[ 'cm-campaign-widget-type' ] ) {
-                case 'popup': $widgetOutput = self::getPopUpOutput();
+                case 'popup':
+					$widgetOutput = self::getPopUpOutput();
                     break;
-//                case 'flyin': $widgetOutput = self::getFlyingBottomOutput();
-//                    break;
-//                case 'full': $widgetOutput = self::getFullScreenOutput();
-//                    break;
+				/*
+				case 'flyin':
+					$widgetOutput = self::getFlyingBottomOutput();
+                    break;
+                case 'full':
+					$widgetOutput = self::getFullScreenOutput();
+                    break;
+				*/
                 default: $widgetOutput = FALSE;
                     break;
             }
@@ -478,7 +487,10 @@ class CMPopUpBannersShared {
     }
 
     static function getBannerContent() {
-        $preContent = maybe_unserialize( self::$widget[ '_cm_advertisement_items' ][ 0 ] );
+        $preContent = '';
+		if(isset(self::$widget[ '_cm_advertisement_items' ][ 0 ])) {
+			$preContent = maybe_unserialize( self::$widget[ '_cm_advertisement_items' ][ 0 ] );
+		}
         /*
          * switch for selected
          */
@@ -500,11 +512,19 @@ class CMPopUpBannersShared {
 
         }
         if ( empty( $adKey ) ) {
-            $adKey = key( $preContent[ 'cm-help-item-group' ] );
+			if( isset($preContent[ 'cm-help-item-group' ]) ) { 
+				$adKey = key( $preContent[ 'cm-help-item-group' ] );
+			}
         }
-        self::$selectedCampaignBannerId = $preContent[ 'cm-help-item-group' ][ $adKey ][ 'banner-uuid' ];
+		if(isset($preContent[ 'cm-help-item-group' ][ $adKey ][ 'banner-uuid' ])) {
+	        self::$selectedCampaignBannerId = $preContent[ 'cm-help-item-group' ][ $adKey ][ 'banner-uuid' ];
+		}
 		global $wp_embed;
-        return do_shortcode($wp_embed->run_shortcode( $preContent[ 'cm-help-item-group' ][ $adKey ][ 'textarea' ] ));
+        if(isset($preContent[ 'cm-help-item-group' ][ $adKey ][ 'textarea' ])) {
+			return do_shortcode($wp_embed->run_shortcode( $preContent[ 'cm-help-item-group' ][ $adKey ][ 'textarea' ] ));
+		} else {
+			return '';
+		}
     }
 
     static function getFlyingBottomOutput() {
@@ -753,14 +773,20 @@ class CMPopUpBannersShared {
         $widgetConfig = self::$widgetConfig;
 		
 		$final_array = array();
-		foreach($widgetConfig as $customFieldKey=>$customFieldValue) {
-			if(!is_array($customFieldValue)) {
-				$final_array[$customFieldKey] = cmpopupbanners_strip_tags($customFieldValue);
-			} else {
-				$final_array[$customFieldKey] = $customFieldValue;
+		if($widgetConfig) {
+			foreach($widgetConfig as $customFieldKey=>$customFieldValue) {
+				if(!is_array($customFieldValue)) {
+					$final_array[$customFieldKey] = cmpopupbanners_strip_tags($customFieldValue);
+				} else {
+					$final_array[$customFieldKey] = $customFieldValue;
+				}
 			}
 		}
 		$widgetConfig = $final_array;
+		
+		if(count($widgetConfig) == 0) {
+			return;
+		}
 
         wp_enqueue_script( 'cmpopfly-popup-core', self::$jsPath . 'ouibounce.js', array( 'jquery' ), CMPOPFLY_VERSION );
         wp_enqueue_script( 'cmpopfly-popup-custom', self::$jsPath . 'popupCustom.js', array( 'jquery', 'cmpopfly-popup-core' ), CMPOPFLY_VERSION );

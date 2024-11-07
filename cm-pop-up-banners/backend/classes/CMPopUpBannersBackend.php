@@ -891,8 +891,8 @@ class CMPopUpBannersBackend {
         add_submenu_page(CMPOPFLY_SLUG_NAME, 'Add New Campaign', 'Add New Campaign', 'edit_posts', 'post-new.php?post_type=' . CMPopUpBannersShared::POST_TYPE);
         do_action('cm_popflyin_submenu_page');
         add_submenu_page(CMPOPFLY_SLUG_NAME, 'Statistics', 'Statistics', 'edit_posts', self::$statisticsPageSlug, array(self::$calledClassName, 'renderAdminPage'));
-        add_submenu_page(CMPOPFLY_SLUG_NAME, 'Settings', 'Settings', 'edit_posts', self::$settingsPageSlug, array(self::$calledClassName, 'renderAdminPage'));
         add_submenu_page(CMPOPFLY_SLUG_NAME, 'Import/Export', 'Import/Export', 'edit_posts', self::$importExportPageSlug, array(self::$calledClassName, 'renderAdminPage'));
+		add_submenu_page(CMPOPFLY_SLUG_NAME, 'Settings', 'Settings', 'edit_posts', self::$settingsPageSlug, array(self::$calledClassName, 'renderAdminPage'));
         add_filter('views_edit-' . CMPopUpBannersShared::POST_TYPE, array(self::$calledClassName, 'filterAdminNav'), 10, 1);
         add_filter('views_edit-' . CMPopUpBannersShared::POST_TYPE_TEMPLATE, array(self::$calledClassName, 'filterAdminNav'), 10, 1);
     }
@@ -1134,6 +1134,7 @@ class CMPopUpBannersBackend {
             wp_register_tinymce_scripts($wp_scripts, true);
             wp_enqueue_script('wp-tinymce');
         }
+		
     }
 
     public static function metaInit() {

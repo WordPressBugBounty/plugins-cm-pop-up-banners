@@ -1,4 +1,3 @@
-
 function safex( e, t ) {
     return typeof e === "undefined" ? t : e;
 }
@@ -90,7 +89,7 @@ jQuery( document ).ready( function ( $ )
     var cmpopfly_cookieName = 'ouibounceBannerShown-' + popup_custom_data.campaign_id;
     var cmpopfly_cookie = cmpopfly_getCookie( cmpopfly_cookieName );
     var cmpopfly_fixedNumberOfTimesCookieName = 'ouibounceBannerBottomShownNumberOfTimes-' + popup_custom_data.campaign_id;
-//    var cmpopfly_fixedNumberOfTimesCookie = cmpopfly_getCookie( cmpopfly_fixedNumberOfTimesCookieName );
+	//var cmpopfly_fixedNumberOfTimesCookie = cmpopfly_getCookie( cmpopfly_fixedNumberOfTimesCookieName );
     var local_ouibounce_sound_path = '';
     var inactivityDelay = popup_custom_data.inactivityTime * 1000;
     var _localOuibounceDelayTimer = null;
@@ -123,7 +122,7 @@ jQuery( document ).ready( function ( $ )
         if ( first_image.length ) {
             first_image.on( 'load', resize_modal );
         } else {
-//            resize_modal();
+			//resize_modal();
         }
 
         $( '.modal.linked' ).on( 'click', function () {
@@ -282,11 +281,13 @@ jQuery( document ).ready( function ( $ )
             $( '.cm-pop-up-banners-scrollspy-marker' ).scrollSpy();
         }
     }
+	
     function handlePopupMouseLeave( e ) {
         if ( e.clientY < 20 ) {
             fireOuibounce( cmpopfly_cookie, cmpopfly_cookieName, cmpopfly_fixedNumberOfTimesCookieName );
         }
     }
+	
     function handleDelayMouseAndKeyMove( e ) {
         if ( ouibounceBannerShown ) {
             document.documentElement.removeEventListener( 'mousemove', handleDelayMouseAndKeyMove );
@@ -298,6 +299,7 @@ jQuery( document ).ready( function ( $ )
         }
         _localOuibounceDelayTimer = setTimeout( fireStandardOuibounce, inactivityDelay );
     }
+	
     function fireStandardOuibounce() {
         fireOuibounce( cmpopfly_cookie, cmpopfly_cookieName, cmpopfly_fixedNumberOfTimesCookieName );
         ouibounceBannerShown = true;
@@ -308,4 +310,5 @@ jQuery( document ).ready( function ( $ )
             $( '#ouibounce-modal' ).fadeOut();
         }, parseInt( WidgetConf.closeTime + '000' ) );
     }
+	
 } );

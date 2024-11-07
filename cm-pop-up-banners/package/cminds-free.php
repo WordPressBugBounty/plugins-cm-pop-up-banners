@@ -1,5 +1,4 @@
 <?php
-
 namespace com\cminds\package\free\v1_1_5;
 
 if (!defined(__NAMESPACE__ . '\PLATFORM_VERSION')) {
@@ -1225,7 +1224,7 @@ if (!class_exists(__NAMESPACE__ . '\CmindsFreePackage')) {
             }
             return esc_url($link);
         }
-
+		
         public function showGuide($atts = array()) {
             global $cmindsPluginPackage;
 
@@ -1250,10 +1249,10 @@ if (!class_exists(__NAMESPACE__ . '\CmindsFreePackage')) {
 
                     div.cminds_guide_wrapper {
                         display: inline-block;
-                        padding: 0em 0em 1em 1em;
                         background: #FFF;
                         margin: 0em 0em 0 0;
                         vertical-align: top;
+						width:100%;
                     }
 
                     div.cminds_guide_wrapper * {
@@ -1262,8 +1261,7 @@ if (!class_exists(__NAMESPACE__ . '\CmindsFreePackage')) {
 
                     .cminds_guide{
                         display: inline-block;
-                        margin: 1em;
-                        padding: 1em;
+						width:95%;
                     }
 
                     .cminds_guide_text{
@@ -1290,16 +1288,20 @@ if (!class_exists(__NAMESPACE__ . '\CmindsFreePackage')) {
                     }
 
                     .cminds_guide .guide_text{
-                        display: inline-block;
-                        width: 509px;
+                        float: left;
+                        width: 60%;
                         max-width: 100%;
-                        margin-right: 40px;
                     }
+					
+					.cminds_guide .guide_text ol{
+						margin-left: 1.2em;
+					}
 
                     .cminds_guide .guide_videos{
-                        display: inline-block;
+                        float: left;
                         max-width: 100%;
                         overflow: hidden;
+						width: 40%;
                     }
 
                     .cminds_guide .guide_videos .guide_videos_inner{
@@ -1356,6 +1358,10 @@ if (!class_exists(__NAMESPACE__ . '\CmindsFreePackage')) {
                     }
                     .install-guide-video {max-height: 160px;}
                     .upgrage-guide-video {max-height: 255px;}
+					@media only screen and (max-width: 768px) {
+						.cminds_guide .guide_text { width:100%; }
+						.cminds_guide .guide_videos { width:100%; }
+					}
                 </style>
                 <?php
                 if (!$guideHidden) :
@@ -1532,9 +1538,7 @@ if (!class_exists(__NAMESPACE__ . '\CmindsFreePackage')) {
 
                     div.cminds_upgrade_wrapper {
                         display: block;
-                        padding: 0em 0em 1em 1em;
                         background: #FFF;
-                        margin: 0em 1em 0 0;
                         vertical-align: top;
                     }
 
@@ -1544,9 +1548,7 @@ if (!class_exists(__NAMESPACE__ . '\CmindsFreePackage')) {
 
                     .cminds_upgrade{
                         display: inline-block;
-                        margin: 1em;
-                        padding: 1em;
-                        width: 100%;
+                        width: 95%;
                     }
 
                     .cminds_upgrade_text{
@@ -1591,10 +1593,12 @@ if (!class_exists(__NAMESPACE__ . '\CmindsFreePackage')) {
                     .cminds_upgrade .upgrade_videos > div{
                         display: inline-block;
                     }
+					
                     .cminds_upgrade .upgrade_videos > div.upgrade_videos_after{
                         display: block;
                         margin: 10px 0 0 0px;
                     }
+					
                     .prev_video,
                     .next_video {
                         margin-top: 15px;
@@ -1630,6 +1634,7 @@ if (!class_exists(__NAMESPACE__ . '\CmindsFreePackage')) {
                     .cminds_upgrade .upgrade_videos .upgrade_video{
                         display: none;
                     }
+					
                     .cminds_upgrade .upgrade_videos .upgrade_video.active{
                         display: inline-block;
                     }
@@ -1707,7 +1712,7 @@ if (!class_exists(__NAMESPACE__ . '\CmindsFreePackage')) {
                                 jQuery('.cm-video-bookmark-link .link_status').html("");
                             }
 
-                    //                             Load Vimeo API for the embedded video
+							// Load Vimeo API for the embedded video
                             var iframe_player = jQuery('.upgrade_video_content iframe')[0];
                             var frogaloopPlayer = $f(iframe_player);
                             // Option listeners for pause, finish, and playProgress
@@ -3123,13 +3128,11 @@ if (!class_exists(__NAMESPACE__ . '\CmindsFreePackage')) {
          */
         public function cminds_generate_sysinfo_download() {
 			if ( wp_verify_nonce( $_POST['system_information_download_form_nonce'], 'system_information_download_form_nonce' ) ) {
-            nocache_headers();
-
-            header("Content-type: text/plain");
-            header('Content-Disposition: attachment; filename="cminds-system-info.txt"');
-
-            echo wp_strip_all_tags($_POST['cminds-sysinfo']);
-            die();
+				nocache_headers();
+				header("Content-type: text/plain");
+				header('Content-Disposition: attachment; filename="cminds-system-info.txt"');
+				echo wp_strip_all_tags($_POST['cminds-sysinfo']);
+				die();
 			}
         }
 

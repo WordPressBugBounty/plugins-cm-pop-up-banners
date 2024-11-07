@@ -1,5 +1,4 @@
 <?php
-
 namespace com\cminds\popupfly;
 
 if (!class_exists('Settings')) {
@@ -84,7 +83,7 @@ if (!class_exists('Settings')) {
                 foreach ($options_names as $option_name) {
                     $option_value_prefiltered = isset($post[$option_name]) ? $post[$option_name] : static::NON_EXISTING_OPTION_DEFAULT;
                     $option_value = apply_filters(static::abbrev('_before_saving_option'), $option_value_prefiltered, $option_name);
-//                update_option($option_name, static::sanitizeInput($option_name, $option_value));
+					// update_option($option_name, static::sanitizeInput($option_name, $option_value));
                     $all_options[$option_name] = static::sanitizeInput($option_name, $option_value);
                 }
 
@@ -183,7 +182,8 @@ if (!class_exists('Settings')) {
             if ($settingsTabsArray) {
                 $content .= '<ul>';
                 foreach ($settingsTabsArray as $tabKey => $tabLabel) {
-                    $content .= '<li><a href="#tabs-' . $tabKey . '">' . $tabLabel . '</a></li>';
+					$tabName = $tabLabel['tab_name'] ?? $tabLabel;
+                    $content .= '<li><a href="#tabs-' . $tabKey . '">' . $tabName . '</a></li>';
                 }
                 $content .= '</ul>';
             }
@@ -300,7 +300,7 @@ if (!class_exists('Settings')) {
         public static function renderField($key, $config) {
             if (empty($config['name'])) {
                 $config['name'] = $key;
-//                wp_die('Setting is missing required "name" field!');
+				// wp_die('Setting is missing required "name" field!');
             }
             $config['value'] = static::get($config['name'],$config['value']);
             $content = SettingsView::renderField($key, $config);
@@ -334,6 +334,10 @@ if (!class_exists('Settings')) {
         }
 
         public static function renderAssets() {
+			wp_register_style( 'select2', CMPOPFLY_PLUGIN_URL . 'backend/assets/vendor/select2/css/select2.min.css' );
+			wp_register_script( 'select2', CMPOPFLY_PLUGIN_URL . 'backend/assets/vendor/select2/js/select2.min.js' );
+			wp_enqueue_style('select2');
+			wp_enqueue_script('select2');
             ob_start();
             ?>
             <style>
@@ -359,13 +363,29 @@ if (!class_exists('Settings')) {
                     float: none;
                     width: auto;
                 }
+				#cm_settings_tabs .block .block {
+                    border: 0px solid grey;
+                    border-radius: 13px;
+                    padding: 0px;
+                    margin: 0px 0px 15px 0px;
+                    float: none;
+                    width: auto;
+                }
                 #cm_settings_tabs .block h3 {
                     padding-top: 0;
                     margin-top: 0;
                 }
                 #cm_settings_tabs table th {
-                    position: relative;
-                    padding-right: 25px;
+					width:30%;
+					float: left;
+                }
+				#cm_settings_tabs table th .cm_field_help {
+					display:none;
+					margin-top:-15px;
+				}
+				#cm_settings_tabs table td {
+					float: left;
+					width: 65%;
                 }
                 .floated-form-table,
                 .floated-form-table tr {
@@ -373,10 +393,10 @@ if (!class_exists('Settings')) {
                 }
                 .floated-form-table tr {
                     float: left;
-                    width: 49%;
+                    width: 100%;
                 }
                 .floated-form-table tr.whole-line {
-                    width: 99%;
+                    width: 100%;
                 }
                 .cm_field_help,
                 .cm_help {
@@ -387,7 +407,6 @@ if (!class_exists('Settings')) {
                     cursor: pointer;
                 }
                 .cm_field_help {
-                    margin: 0 -20px 0 0;
                     float: right;
                 }
                 .cm_field_help:hover,
@@ -493,7 +512,15 @@ if (!class_exists('Settings')) {
             //Call flush_rules() as a method of the $wp_rewrite object
             $wp_rewrite->flush_rules();
         }
-
+		
+		public static function enqueueAssets($page) {
+			if($page == 'cm-pop-up-banners_page_cm-popupflyin-settings') {
+				$baseurl = plugin_dir_url(__FILE__) . '/assets/';
+				wp_enqueue_style(self::abbrev('settings-select2-css'), $baseurl . '/css/select2.min.css');
+				wp_enqueue_style(self::abbrev('settings-css'), $baseurl . '/css/settings.css', [self::abbrev('settings-select2-css')]);
+			}
+		}
+	
     }
-
+	
 }
