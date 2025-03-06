@@ -16,7 +16,7 @@ use com\cminds\popupfly\CMPopUpBannersBackend;
         'wpautop'            => false,
         'indent'             => true,
     );
-    $user_id = get_current_user();
+    $user_id = get_current_user_id();
     if (!user_can($user_id, 'manage_options')) {
         $tinymce_options['invalid_elements'] = 'script';
     }
