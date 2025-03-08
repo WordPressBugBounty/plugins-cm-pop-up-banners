@@ -150,7 +150,9 @@ use com\cminds\popupfly\CMPOPFLY_Settings;
                         $mb->the_field('cm-campaign-display-method');
                         $fieldValue = $mb->get_the_value();
                         if (empty($fieldValue)) {
-                            $fieldValue = $widgetDisplayMethod['value'];
+							if(!empty($widgetDisplayMethod['value'])) {
+								$fieldValue = $widgetDisplayMethod['value'];
+							}
                         }
 						if(!empty($widgetDisplayMethod['options'])) {
 							foreach ($widgetDisplayMethod['options'] as $key => $value) {
@@ -369,7 +371,9 @@ use com\cminds\popupfly\CMPOPFLY_Settings;
                     $mb->the_field('cm-campaign-clicks-counting-method');
                     $fieldValue = $mb->get_the_value();
                     if (empty($fieldValue)) {
-                        $fieldValue = $clicksCountMethod['value'];
+						if(!empty($clicksCountMethod['value'])) {
+							$fieldValue = $clicksCountMethod['value'];
+						}
                     }
 					if(!empty($clicksCountMethod['options'])) {
 						foreach ($clicksCountMethod['options'] as $key => $value) {
@@ -390,7 +394,9 @@ use com\cminds\popupfly\CMPOPFLY_Settings;
                     $mb->the_field('cm-campaign-sound-effect-type');
                     $fieldValue = $mb->get_the_value();
                     if (empty($fieldValue)) {
-                        $fieldValue = $soundEffectMethod['value'];
+						if(!empty($soundEffectMethod['value'])) {
+							$fieldValue = $soundEffectMethod['value'];
+						}
                     }
 					if(!empty($soundEffectMethod['options'])) {
 						foreach ($soundEffectMethod['options'] as $key => $value) {
