@@ -5,7 +5,7 @@ Contributors: CreativeMindsSolutions
 Tags: popup, popups, popup builder, popup maker, wp popup
 Requires at least: 5.4.0
 Tested up to: 6.7
-Stable Tag: 1.7.9
+Stable Tag: 1.7.10
 Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -104,6 +104,10 @@ List of all [WordPress Plugins](https://www.cminds.com) by CreativeMinds
 6. Popup Campaign - Front-end Example
 
 == Changelog ==
+
+= 1.7.10 =
+Release Date: 14 Mar 2025
+* Updated pricing
 
 = 1.7.9 =
 Release Date: 07 Mar 2025
