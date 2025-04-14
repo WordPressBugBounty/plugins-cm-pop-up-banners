@@ -322,6 +322,9 @@ if (!class_exists('Settings')) {
                     .onlyinpro.hide {
                         display: none !important;
                     }
+					.onlyinpro_empty.show {
+						display: block !important;
+					}
                 </style>
                 <?php
                 $renderOnce = 1;

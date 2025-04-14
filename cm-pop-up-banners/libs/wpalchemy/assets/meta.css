@@ -56,4 +56,5 @@ input.readonly, input[readonly], textarea.readonly, textarea[readonly] { backgro
 .my_meta_control .onlyinpro * { color: #aaa; }
 .my_meta_control .onlyinpro { color: #aaa; }
 .my_meta_control .onlyinpro.hide { display: none; }
+.my_meta_control .onlyinpro_empty.show { display: block !important; }
 span.field-info span { color: green !important; }

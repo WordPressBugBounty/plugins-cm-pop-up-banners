@@ -389,6 +389,10 @@ input[type=radio]:hover, input[type=radio]:focus {
 }
 
 .cm_field_help_pro { color: green !important; }
+.onlyinpro * { color: #aaa !important; }
+.onlyinpro { color: #aaa !important; }
+.onlyinpro.hide { display: none !important; }
+.onlyinpro_empty.show { display: block !important; }
 
 @media (max-width: 1336px) {
 	.block tbody tr {

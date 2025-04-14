@@ -11,7 +11,7 @@ foreach ( $post_types as $post_type ) {
 
 $before_content = '<div class="settings-tab">
 	
-	<div class="cminds_settings_toggle_tabs cminds_settings_toggle-opened" style="opacity:.5; pointer-events:none;">Toggle All</div>
+	<div class="cminds_settings_toggle_tabs cminds_settings_toggle-opened onlyinpro" style="opacity:.5; pointer-events:none;">Toggle All</div>
 	
 	<div class="block" id="post-types">
 		<h3 class="section-title">
@@ -40,7 +40,7 @@ $before_content .= '</select></div>
 		</table>
 	</div>
 	
-	<div class="block" id="editor" style="opacity:.5; pointer-events:none;">
+	<div class="block onlyinpro" id="editor" style="opacity:.5; pointer-events:none;">
 		<h3 class="section-title">
 			<span>Editor</span>
 			<svg class="tab-arrow" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="#6BC07F"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path></svg>
@@ -59,7 +59,7 @@ $before_content .= '</select></div>
 		</table>
 	</div>
 	
-	<div class="block" id="appearance" style="opacity:.5; pointer-events:none;">
+	<div class="block onlyinpro" id="appearance" style="opacity:.5; pointer-events:none;">
 		<h3 class="section-title">
 			<span>Appearance</span>
 			<svg class="tab-arrow" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="#6BC07F"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path></svg>
@@ -78,7 +78,7 @@ $before_content .= '</select></div>
 		</table>
 	</div>
 	
-	<div class="block" id="statistics" style="opacity:.5; pointer-events:none;">
+	<div class="block onlyinpro" id="statistics" style="opacity:.5; pointer-events:none;">
 		<h3 class="section-title">
 			<span>Statistics</span>
 			<svg class="tab-arrow" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="#6BC07F"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path></svg>
@@ -98,6 +98,7 @@ $before_content .= '</select></div>
 	</div>
 	
 </div>
+<div class="onlyinpro_empty" style="display:none;"><p style="margin-top:20px;">Pro options are hidden. Click the button <span style="font-weight:bold;color:#00cd00;">"Show/hide Pro options"</span> to see them.</p></div>
 <script>
 jQuery(document).ready(function () {
 	jQuery(".select2").select2();

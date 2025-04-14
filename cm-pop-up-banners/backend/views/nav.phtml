@@ -2,11 +2,19 @@
     .subsubsub li+li:before {content:'| ';}
 </style>
 <div id="CMPOPFLY_admin_nav">
-<ul class="subsubsub">
-    <?php 
-    foreach ($submenus as $menu): ?>
-    <li><a href="<?php echo esc_attr($menu['link']); ?>" <?php echo ($menu['current'])?'class="current"':''; ?>><?php echo esc_html($menu['title']); ?></a></li>
-    <?php endforeach; ?>
-</ul>
-<br class="clear" />
+	<ul class="subsubsub">
+		<?php
+		foreach($submenus as $menu) {
+			if($menu['title'] != '<span class="cmseparator"></span>') {
+				?>
+				<li><a href="<?php echo esc_attr($menu['link']); ?>" <?php echo ($menu['current'])?'class="current"':''; ?>><?php echo esc_html($menu['title']); ?></a></li>
+				<?php
+			}
+		}
+		?>
+	</ul>
+	<br class="clear" />
+	<div class="show_hide_pro_options" style="width:98%; text-align:right;">
+		<a onclick="jQuery('.onlyinpro').toggleClass('hide'); jQuery('.onlyinpro_empty').toggleClass('show'); return false;" class="button cmpop_show_hide_pro_options" style="background:lightgreen;">Show/hide Pro options</a>
+	</div>
 </div>
