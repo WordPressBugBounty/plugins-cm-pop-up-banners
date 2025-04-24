@@ -1526,7 +1526,13 @@ class CMPopUpBannersBackend {
                 foreach ($cmHelpItemOptions['cm-help-item-options'] as $key => $helpItemOption) {
                     $showHelpItemPageId = intval($helpItemOption['cm-help-item-url']);
                     if ($showHelpItemPageId) {
-                        $result = update_post_meta($showHelpItemPageId, CMPopUpBannersShared::CMPOPFLY_SELECTED_AD_ITEM, $post_id);
+						$checkpost = get_post($post_id);
+						if ($checkpost && $checkpost->post_parent ) {
+							$new_post_id = $checkpost->post_parent;
+						} else {
+							$new_post_id = $post_id;
+						}
+                        $result = update_post_meta($showHelpItemPageId, CMPopUpBannersShared::CMPOPFLY_SELECTED_AD_ITEM, $new_post_id);
                     }
                 }
             }

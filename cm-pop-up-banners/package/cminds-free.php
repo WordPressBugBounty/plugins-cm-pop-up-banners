@@ -664,7 +664,7 @@ if (!class_exists(__NAMESPACE__ . '\CmindsFreePackagePOP')) {
 
         public function updateMenu() {
             
-			add_submenu_page($this->getOption('plugin-menu-item'), '', '<span class="cmseparator"></span>', 'create_users', '#');
+			add_submenu_page($this->getOption('plugin-menu-item'), '', '<span class="cmseparator"></span>', 'manage_options', '#');
 
 			if (!$this->getOption('plugin-free-only')) {
 				add_submenu_page($this->getOption('plugin-menu-item'), __('Upgrade&nbsp;➤', 'cminds-package'), __('Upgrade&nbsp;➤', 'cminds-package'), 'manage_options', $this->getProSlug(), array($this, 'displayPage'));
