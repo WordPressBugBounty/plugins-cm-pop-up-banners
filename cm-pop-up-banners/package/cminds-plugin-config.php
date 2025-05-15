@@ -7,7 +7,7 @@ $cminds_plugin_config = array(
     'plugin-is-pro'                 => FALSE,
     'plugin-free-only'              => FALSE,
     'plugin-has-addons'             => TRUE,
-    'plugin-version'                => '1.8.1',
+    'plugin-version'                => '1.8.2',
 	'plugin-addons'        => array(
 		array(
 			'title' => 'Ad Changer Manager',

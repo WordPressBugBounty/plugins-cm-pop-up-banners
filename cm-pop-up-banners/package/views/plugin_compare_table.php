@@ -48,8 +48,8 @@
         <td style="text-align:center; border-right: 1px solid #c0c0c0; width:28%"></td>
         <td style="text-align:center; font-size:20px; width:18%">FREE</td>
         <td style="text-align:center; font-size:20px; width:18%">$39</td>
-        <td style="text-align:center; font-size:20px; width:18%">$89</td>
-        <td style="text-align:center; font-size:20px; width:18%">$149</td>
+        <td style="text-align:center; font-size:20px; width:18%">$79</td>
+        <td style="text-align:center; font-size:20px; width:18%">$119</td>
     </tr>
     <tr>
         <td style="border-right: 1px solid #c0c0c0; width:28%">Price includes 1 year support/updates.<br>Manual renewal with 40% discount, not a subscription 
@@ -77,7 +77,7 @@
         <td style="text-align:center; font-size:16px; width:18%"></td>
         <td style="text-align:center; font-size:16px; width:18%">1 Site</td>
         <td style="text-align:center; font-size:16px; width:18%">3 Sites</td>
-        <td style="text-align:center; font-size:16px; width:18%">10 Sites</td>
+        <td style="text-align:center; font-size:16px; width:18%">5 Sites</td>
     </tr>
     <tr style="height:50px">
         <td style="width:28%; border-bottom: 1px solid #c0c0c0; border-top: 1px solid #c0c0c0; font-size:16px;" colspan="5">
@@ -455,14 +455,14 @@
         <td style="text-align:center; border-bottom: 1px solid #c0c0c0; font-size:16px; width:18%"></td>
         <td style="text-align:center; border-bottom: 1px solid #c0c0c0; font-size:16px; width:18%">1 Site</td>
         <td style="text-align:center; border-bottom: 1px solid #c0c0c0; font-size:16px; width:18%">3 Sites</td>
-        <td style="text-align:center; border-bottom: 1px solid #c0c0c0; font-size:16px; width:18%">10 Sites</td>
+        <td style="text-align:center; border-bottom: 1px solid #c0c0c0; font-size:16px; width:18%">5 Sites</td>
     </tr>
     <tr>
         <td style="text-align:center; border-right: 1px solid #c0c0c0; width:28%"></td>
         <td style="text-align:center; font-size:20px; width:18%">FREE</td>
         <td style="text-align:center; font-size:20px; width:18%">$39</td>
-        <td style="text-align:center; font-size:20px; width:18%">$89</td>
-        <td style="text-align:center; font-size:20px; width:18%">$149</td>
+        <td style="text-align:center; font-size:20px; width:18%">$79</td>
+        <td style="text-align:center; font-size:20px; width:18%">$119</td>
     </tr>
     <tr>
         <td style="border-right: 1px solid #c0c0c0; width:28%">Price includes 1 year support/updates.<br>Manual renewal with 40% discount, not a subscription 
