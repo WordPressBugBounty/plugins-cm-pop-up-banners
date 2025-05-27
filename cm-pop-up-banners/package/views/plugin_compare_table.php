@@ -97,7 +97,7 @@
     </tr>
     <tr>
         <td style="width:28%; border-bottom: 1px solid #c0c0c0; border-right: 1px solid #c0c0c0;">
-            PopUp Content
+            Popup Content
             <span class="dashicons dashicons-info-outline cminds-package-show-tooltip" style="color:green"
                   title="Use image popups, html banners, video, and more."></span>
         </td>
@@ -108,7 +108,7 @@
     </tr>
     <tr>
         <td style="width:28%; border-bottom: 1px solid #c0c0c0; border-right: 1px solid #c0c0c0;">
-            PopUp Width and Height
+            Popup Width and Height
             <span class="dashicons dashicons-info-outline cminds-package-show-tooltip" style="color:green"
                   title="Choose the width/height of the custom WordPress popup."></span></td>
         <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
@@ -118,7 +118,7 @@
     </tr>
     <tr>
         <td style="width:28%; border-bottom: 1px solid #c0c0c0; border-right: 1px solid #c0c0c0;">
-            Extended Set of PopUp Types
+            Extended Set of Popup Types
             <span class="dashicons dashicons-info-outline cminds-package-show-tooltip" style="color:green"
                   title="This popup system allows you to choose between pop-up, fly-in and full-screen banner options. You can define multiple campaigns to work on your website."></span></td>
         <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-no" style="color:red"></span></td>
@@ -139,7 +139,7 @@
     </tr>
     <tr>
         <td style="width:28%; border-bottom: 1px solid #c0c0c0; border-right: 1px solid #c0c0c0;">
-            Random PopUps
+            Random Popups
             <span class="dashicons dashicons-info-outline cminds-package-show-tooltip" style="color:green"
                   title="Add multiple popup banners in the same campaign and show a random popup allowing you to choose the best-converting popup."></span></td>
         <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-no" style="color:red"></span></td>
@@ -151,7 +151,7 @@
         <td style="width:28%; border-bottom: 1px solid #c0c0c0; border-right: 1px solid #c0c0c0;">
             Custom Effects
             <span class="dashicons dashicons-info-outline cminds-package-show-tooltip" style="color:green"
-                  title="Define PopUp banner campaign visual and audio effects once the popup shows. For example, you can make the popup slide before appearing."></span></td>
+                  title="Define Popup banner campaign visual and audio effects once the popup shows. For example, you can make the popup slide before appearing."></span></td>
         <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-no" style="color:red"></span></td>
         <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
         <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
@@ -180,7 +180,7 @@
     </tr>
     <tr>
         <td style="width:28%; border-bottom: 1px solid #c0c0c0; border-right: 1px solid #c0c0c0;">
-            Page leave intent detection PopUp
+            Page leave intent detection Popup
             <span class="dashicons dashicons-info-outline cminds-package-show-tooltip" style="color:green"
                   title="Detect when user moves cursor to close the tab and in such event show the popup."></span></td>
         <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-no" style="color:red"></span></td>
@@ -193,6 +193,66 @@
             Inactivity detection
             <span class="dashicons dashicons-info-outline cminds-package-show-tooltip" style="color:green"
                   title="You can show the popup when user is inactive for X seconds (not moving the mouse and not typing)."></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-no" style="color:red"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+    </tr>
+    <tr>
+        <td style="width:28%; border-bottom: 1px solid #c0c0c0; border-right: 1px solid #c0c0c0;">
+            Popup overlay
+            <span class="dashicons dashicons-info-outline cminds-package-show-tooltip" style="color:green"
+                  title="Add a popup overlay effect. You can choose between a blur effect or a color overlay with adjustable transparency."></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-no" style="color:red"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+    </tr>
+    <tr>
+        <td style="width:28%; border-bottom: 1px solid #c0c0c0; border-right: 1px solid #c0c0c0;">
+            Inner border
+            <span class="dashicons dashicons-info-outline cminds-package-show-tooltip" style="color:green"
+                  title="Allows you to add and customize an inner border for the popup banner, including color, width, radius and style."></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-no" style="color:red"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+    </tr>
+    <tr>
+        <td style="width:28%; border-bottom: 1px solid #c0c0c0; border-right: 1px solid #c0c0c0;">
+            Popup shadow
+            <span class="dashicons dashicons-info-outline cminds-package-show-tooltip" style="color:green"
+                  title="Adds a shadow around the popup. You can customize the shadow's color, offset, and intensity."></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-no" style="color:red"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+    </tr>
+    <tr>
+        <td style="width:28%; border-bottom: 1px solid #c0c0c0; border-right: 1px solid #c0c0c0;">
+            Custom close button
+            <span class="dashicons dashicons-info-outline cminds-package-show-tooltip" style="color:green"
+                  title="Lets you define the appearance and position of the close button."></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-no" style="color:red"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+    </tr>
+    <tr>
+        <td style="width:28%; border-bottom: 1px solid #c0c0c0; border-right: 1px solid #c0c0c0;">
+            Sticky button
+            <span class="dashicons dashicons-info-outline cminds-package-show-tooltip" style="color:green"
+                  title="Displays a fixed button on the page that users can click to open the popup. The popup does not appear automatically in this case. The admin can define the button's position."></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-no" style="color:red"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+        <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
+    </tr>
+    <tr>
+        <td style="width:28%; border-bottom: 1px solid #c0c0c0; border-right: 1px solid #c0c0c0;">
+            Multiple popups
+            <span class="dashicons dashicons-info-outline cminds-package-show-tooltip" style="color:green"
+                  title="Display several popups on the same page. Control their stacking order using individual z-index settings to manage which popup appears on top."></span></td>
         <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-no" style="color:red"></span></td>
         <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>
         <td style="text-align:center; width:18%; border-bottom: 1px solid #c0c0c0;"><span class="dashicons dashicons-yes" style="color:green"></span></td>

@@ -42,5 +42,57 @@ h4 { font-weight: bold; margin: 0; padding: 10px 0 0; }
 #cmpopfly-options-group-accortion textarea { max-width: 500px; }
 #cmpopfly-options-group-accortion .wpa_loop .wpa_group { max-width: 480px; }
 
-/* fix for ad designer close icon */
-/* .ad-designer .ui-button-icon-only .ui-icon {top: 0;left: 0;} */
+.select2 { min-width:100%; width:100% !important; }
+.cm-clone-campaign-title { margin-left:5px; }
+
+#cmpopfly-tab-advanced-visual { width:100% !important; }
+#appearance_accordion { margin-top:15px; }
+#appearance_accordion > h3 { padding-left:5px !important; }
+#appearance_accordion > h3 > span { position:static; margin-top:-2px; }
+#appearance_accordion > div { height:auto !important; padding-top:20px; padding-bottom:25px; }
+
+.appearance_accordion_row { width:100%; }
+.appearance_accordion_row label { width:100%; margin-top:5px; margin-bottom:5px; }
+.appearance_accordion_row input[type="number"] { max-width:100px; width:100%; }
+.appearance_accordion_row input[type="color"] { max-width:100px; width:100%; }
+.appearance_accordion_row select { max-width:200px; width:100%; }
+.appearance_accordion_row textarea { width:100%; height:150px; max-width:100% !important; }
+
+.appearance_preview { width:94%; height:324px; margin-top:15px; margin-bottom:15px; border:1px solid #333; padding:25px; background-image:url("images/previewbg.png"); background-position:center; background-repeat:no-repeat; background-size:contain; position:relative; }
+
+.appearance_preview_bg { display:block; position:absolute; height:100%; width:100%; top:0; left:0; background-image:url("images/previewbg.png"); background-position:center; background-repeat:no-repeat; background-size:contain; }
+.appearance_preview_container { background:#fff; margin:110px auto auto auto; position:relative; max-width:480px; }
+.appearance_preview_content { padding:20px; }
+.appearance_preview_close { position: absolute; cursor: pointer; z-index: 9999; text-decoration:none; line-height:0.5; }
+
+.cmpop_overlay_blur_con { display:none; }
+.cmpop_overlay_color_con { display:none; }
+.cmpop_overlay_color_tra_con { display:none; }
+
+.stickybutton_preview { position:fixed; display:inline-grid; z-index:9999999; cursor:pointer; transform-origin:right center 0; border-style:solid; border-color:transparent; }
+.stickybutton_preview span { height:20px; text-align:center; display:inline-table; line-height:1; font-family:'Open Sans', Arial, sans-serif; }
+
+.stickybutton_preview.corner_top_left { left:-220px; top:-40px; transform:rotate(140deg); width:160px; height:160px; }
+.stickybutton_preview.corner_top_left span { transform:rotate(180deg); padding-bottom:10px; }
+
+.stickybutton_preview.corner_top_right { right:62px; top:-145px; transform:rotate(-140deg); width:160px; height:160px; }
+.stickybutton_preview.corner_top_right span { transform:rotate(180deg); padding-bottom:10px; }
+
+.stickybutton_preview.corner_bottom_left { bottom:-145px; left:-115px; transform:rotate(45deg); width:160px; height:160px; }
+.stickybutton_preview.corner_bottom_left span { padding-top:10px; }
+
+.stickybutton_preview.corner_bottom_right { right:-65px; bottom:-30px; transform:rotate(-45deg); width:160px; height:160px; }
+.stickybutton_preview.corner_bottom_right span { padding-top:10px; }
+
+.stickybutton_preview.basic_top_left { left:0px; top:0px; padding:10px; }
+.stickybutton_preview.basic_top_center { top:0px; right:48%; padding:10px; }
+.stickybutton_preview.basic_top_right { right:0px; top:0px; padding:10px; }
+.stickybutton_preview.basic_left_center { left:0px; top:40%; padding:10px; transform:rotate(90deg); transform-origin:left bottom 0; }
+.stickybutton_preview.basic_right_center { right:0px; top:40%; padding:10px; transform: rotate(-90deg); transform-origin:right bottom 0px; }
+.stickybutton_preview.basic_bottom_left { bottom:0px; left:0px; padding:10px; }
+.stickybutton_preview.basic_bottom_center { bottom:0px; right:48%; padding:10px; }
+.stickybutton_preview.basic_bottom_right { right:0px; bottom:0px; padding:10px; }
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+	border: 1px solid #135e96; background:#135e96;
+}

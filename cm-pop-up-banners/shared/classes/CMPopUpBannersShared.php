@@ -558,7 +558,7 @@ class CMPopUpBannersShared {
         $mobileWidthBoundary    = CMPOPFLY_Settings::get( CMPOPFLY_Settings::OPTION_MOBILE_MAX_WIDTH, '400px' );
         $mobileWidth            = ((!empty( $widgetConfig[ 'cm-campaign-widget-mobile-width' ] ) ? $widgetConfig[ 'cm-campaign-widget-mobile-width' ] : 'auto'));
         $mobileHeight           = ((!empty( $widgetConfig[ 'cm-campaign-widget-mobile-height' ] ) ? $widgetConfig[ 'cm-campaign-widget-mobile-height' ] : 'auto'));
-        $zindex                 = ((!empty( $widgetConfig[ 'cm-campaign-zindex' ] ) ? (intval( $widgetConfig[ 'cm-campaign-zindex' ] )) : ('100')));
+        $zindex                 = ((!empty( $widgetConfig[ 'cm-campaign-zindex' ] ) ? (intval( $widgetConfig[ 'cm-campaign-zindex' ] )) : ('100001')));
         $padding                = ((!empty( $widgetConfig[ 'cm-campaign-padding' ] ) ? (intval( $widgetConfig[ 'cm-campaign-padding' ] ) . 'px') : ('10px')));
         $background             = ((!empty( $widgetConfig[ 'cm-campaign-widget-background-color' ] ) ? ($widgetConfig[ 'cm-campaign-widget-background-color' ]) : ('#f0f1f2')));
         $backgroundImage        = ((!empty( $widgetConfig[ 'cm-campaign-widget-background-image' ] ) ? ($widgetConfig[ 'cm-campaign-widget-background-image' ]) : ('')));

@@ -399,7 +399,7 @@ if ( !function_exists( 'cmpopfly_cminds_dropdown' ) ) {
 		}
 
 		if ( !empty( $pages ) ) {
-			$output = "<select name='" . esc_attr( $r[ 'name' ] ) . "' id='" . esc_attr( $r[ 'id' ] ) . "'>\n";
+			$output = "<select name='" . esc_attr( $r[ 'name' ] ) . "' style='width:100%;' id='" . esc_attr( $r[ 'id' ] ) . "'>\n";
 			if ( $r[ 'show_option_no_change' ] ) {
 				$selected = ( '-1' == $r[ 'selected' ] ) ? ' selected="selected"' : '';
 				$output .= "\t<option value=\"-1\" {$selected} >" . $r[ 'show_option_no_change' ] . "</option>\n";
@@ -435,6 +435,9 @@ if ( !function_exists( 'cmpopfly_cminds_dropdown' ) ) {
 					unset( $post_types[ $key ] );
 				}
 				if ( ($key = array_search( 'page', $post_types )) !== false ) {
+					unset( $post_types[ $key ] );
+				}
+				if ( ($key = array_search( 'cm-ad-item', $post_types )) !== false ) {
 					unset( $post_types[ $key ] );
 				}
 

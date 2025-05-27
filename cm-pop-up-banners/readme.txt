@@ -5,7 +5,7 @@ Contributors: CreativeMindsSolutions
 Tags: popup, popups, popup builder, popup maker, wp popup
 Requires at least: 5.4.0
 Tested up to: 6.8
-Stable Tag: 1.8.2
+Stable Tag: 1.8.3
 Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -74,6 +74,12 @@ The [Popup Maker Plugin Premium editions](https://www.cminds.com/wordpress-plugi
 * Inactivity detection: You can show the popup when user is inactive for X seconds (not moving the mouse and not typing).
 * Show X amount of times per customer: You can define that the campaign will show X amount of time per a specific customer until it stops.
 * Target Specific Users: Set pop up campaign to target logged-in or non-logged-in users.
+* Popup Overlay Effects: Add blur or semi-transparent color overlays behind the popup for better focus and visual appeal.
+* Inner Border Styling: Add and customize an inner border around the popup banner to match your site’s design.
+* Popup Shadow Customization: Add a shadow around the popup and adjust its size, color, and intensity.
+* Custom Close Button: Customize the look and position of the close button for each popup individually.
+* Sticky Trigger Button: Display a button on the page that users can click to open the popup manually, instead of showing it automatically.
+* Multiple Popups Display: Show multiple popups on the same page and control their stacking order using individual z-index settings.
 
 == Follow Us ==
 
@@ -103,6 +109,10 @@ List of all [WordPress Plugins](https://www.cminds.com) by CreativeMinds
 6. Popup Campaign - Front-end Example
 
 == Changelog ==
+
+= 1.8.3 =
+Release Date: 27 May 2025
+* Added new settings as a showcase
 
 = 1.8.2 =
 Release Date: 15 May 2025

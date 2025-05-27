@@ -4,40 +4,31 @@ plugin_url = window.cm_popupflyin_backend.plugin_url;
 (function ($) {
 
     $('.cm-help-items-metacontrol').on('click', '.cm-template-control .cm-apply-template', function (e) {
-
         if (!confirm('Warning! This will change the current content of the editor. Are you sure?')) {
             return false;
         }
-
         var loadedTemplate = $(this).parents('.cm-template-control').find('select[name*="cm_load_template"]').val();
         var editor = $(this).parents('.customEditor').find('.wp-editor-area');
         var title = $(this).parents('.group-inside').find('.cm-help-item-title');
         var tinyMCEeditor = tinymce.get(editor.attr('id'));
-
         var data = {
             'action': 'cm_popupflyin_template_api',
             'template': loadedTemplate
         };
-
         $.post(window.cm_popupflyin_backend.ajaxurl, data, function (response) {
-
-            if (typeof response !== 'undefined')
-            {
-                if (response.content.length)
-                {
+            if (typeof response !== 'undefined') {
+                if (response.content.length) {
                     tinyMCEeditor.focus();
                     tinyMCEeditor.setContent(response.content);
                 }
-                if (response.title.length)
-                {
+                if (response.title.length) {
                     title.val(response.title);
                 }
             }
-
         }, 'json');
-
         return false;
     });
+	
     $('#user_show_method-flying-bottom').on('change', function (e) {
         var resetField = $('#resetFloatingBottomBannerCookieContainer');
         var howManyTimesField = $('#resetFloatingBottomBannerHowManyTimes');
@@ -53,6 +44,7 @@ plugin_url = window.cm_popupflyin_backend.plugin_url;
         resetField.hide();
         howManyTimesField.hide();
     }).change();
+	
     $('#cm-campaign-widget-type').on('change', function (e) {
         var underlayField = $('#underlayTypeContainer');
         if (this.value == 'popup') {
@@ -61,6 +53,7 @@ plugin_url = window.cm_popupflyin_backend.plugin_url;
             underlayField.hide();
         }
     }).change();
+	
     $('#cm-campaign-widget-when-fire-the-popup').on('change', function (e) {
         var inactivityTypeField = $('#cmCampaignFireMethodInactiveTimeInput');
         var bottomPageFireDistanceInputField = $('#cmCampaignBottomPageFireDistanceInput');
@@ -75,6 +68,7 @@ plugin_url = window.cm_popupflyin_backend.plugin_url;
             bottomPageFireDistanceInputField.hide();
         }
     }).change();
+	
     $('.cm-campaign-sound-effect-type').on('change', function (e) {
         var customPopupSoundContainer = $('#customPopupSoundContainer');
         if (this.value == 'custom' && $(this).is(':checked')) {
@@ -84,17 +78,19 @@ plugin_url = window.cm_popupflyin_backend.plugin_url;
         }
     }).change();
 
-    /*
-     * accordeon tabs with campain options
-     */
-    jQuery(document).ready(function ($) {
+	jQuery(document).ready(function ($) {
         $("#cmpopfly-options-group-tabs .options-tab").removeClass('hidden');
-        $("#cmpopfly-options-group-tabs").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
+        $("#cmpopfly-options-group-tabs").tabs({
+			activate: function(event, ui) {
+				let panelId = ui.newPanel.attr('id');
+				if(panelId == 'cmpopfly-tab-advanced-visual') {
+					$( "#appearance_accordion" ).accordion();
+				}
+			}
+		}).addClass("ui-tabs-vertical ui-helper-clearfix");
         $("#cmpopfly-options-group-tabs li").removeClass("ui-corner-top").addClass("ui-corner-left");
     });
-    /*
-     * filling selected banner select and validation
-     */
+	
     jQuery(".campaign-display-method").on('change', function () {
         if (jQuery(".campaign-display-method:checked").val() == 'selected') {
             jQuery('#campaign-selected-banner-panel').show();
@@ -102,13 +98,16 @@ plugin_url = window.cm_popupflyin_backend.plugin_url;
             jQuery('#campaign-selected-banner-panel').hide();
         }
     }).change();
+	
     jQuery(document.body).on('wpa_copy', function () {
         jQuery('#campaign-selected-banner-back').val(jQuery('#cm-campaign-widget-selected-banner').val());
         fillSelectedBannerDropdown();
     });
+	
     jQuery(document.body).on('change', '#cm-campaign-widget-selected-banner', function () {
         jQuery('#campaign-selected-banner-back').val(jQuery('#cm-campaign-widget-selected-banner').val());
     });
+	
     jQuery(document.body).on('wpa_delete', function () {
         jQuery('#campaign-selected-banner-back').val(jQuery('#cm-campaign-widget-selected-banner').val());
         fillSelectedBannerDropdown();
@@ -127,7 +126,9 @@ plugin_url = window.cm_popupflyin_backend.plugin_url;
         }
         selectedBanner.val(lastSelectedBanner);
     }
+	
     fillSelectedBannerDropdown();
+	
     jQuery('p.meta-save button[name="save"]').on('click', function (e) {
         if (jQuery(".campaign-display-method:checked").val() === 'selected') {
             if (!jQuery('#cm-campaign-widget-selected-banner').val()) {
@@ -147,9 +148,7 @@ plugin_url = window.cm_popupflyin_backend.plugin_url;
     jQuery('#cm-campaign-widget-selected-banner').parents('form').on('submit', function (e) {
         jQuery('#cm-campaign-widget-selected-banner').val(jQuery("#cm-campaign-widget-selected-banner option:first").val());
     });
-    /*
-     * activity dates
-     */
+	
     $('#add_active_date_range').click(function (e) {
         var html;
         e.preventDefault();
@@ -185,16 +184,20 @@ plugin_url = window.cm_popupflyin_backend.plugin_url;
                 $('#dates').html('There are no date limitations set');
         });
     });
-    $('#dates .date_range_row input[type="text"]').datepicker({"dateFormat": "yy-mm-dd"});
+    
+	$('#dates .date_range_row input[type="text"]').datepicker({"dateFormat": "yy-mm-dd"});
+	
     $('.date_range_row .h_spinner').spinner({
         max: 24,
         min: 0
     });
+		
     $('.date_range_row .m_spinner').spinner({
         max: 50,
         min: 0,
         step: 10
     });
+		
     $('#dates .delete_link').click(function (e) {
         e.preventDefault();
         $(this).parent().remove();
@@ -215,7 +218,6 @@ plugin_url = window.cm_popupflyin_backend.plugin_url;
                 "ui-dialog": "ad-designer"
             }
         });
-
         return false;
     });
 

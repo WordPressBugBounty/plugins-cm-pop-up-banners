@@ -2485,13 +2485,15 @@ if (!class_exists(__NAMESPACE__ . '\CmindsFreePackagePOP')) {
                     if (!empty($_GET['page']) && $_GET['page'] == $pluginAbbrev . '_pro' && $slug == $pluginAbbrev . '_pro') {
                         continue;
                     }
-
-                    $submenus[] = array(
-                        'link'     => $url,
-                        'title'    => $sub_item[0],
-                        'current'  => $isCurrent,
-                        'external' => $isExternal
-                    );
+					
+					if($sub_item[3] != '') {
+						$submenus[] = array(
+							'link'     => $url,
+							'title'    => $sub_item[0],
+							'current'  => $isCurrent,
+							'external' => $isExternal
+						);
+					}
                 }
                 ?>
                 <div id="cmhandfsl_admin_nav">

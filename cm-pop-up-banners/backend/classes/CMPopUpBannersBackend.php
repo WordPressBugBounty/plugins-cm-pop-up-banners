@@ -98,7 +98,16 @@ class CMPopUpBannersBackend {
             'template' => CMPOPFLY_PLUGIN_DIR . 'libs/wpalchemy/metaboxes/cm-help-items-options.php',
             'types'    => array(CMPopUpBannersShared::POST_TYPE)
         ));
-
+		
+		self::$customMetaboxes[] = new WPAlchemy_MetaBox(array(
+            'id'       => '_cm_advertisement_items_statistics',
+            'title'    => 'Statistics',
+            'template' => CMPOPFLY_PLUGIN_DIR . 'libs/wpalchemy/metaboxes/cm-help-items-statistics.php',
+            'types'    => array( CMPopUpBannersShared::POST_TYPE ),
+			'context'  => 'side',
+			'priority'  => 'high',
+        ));
+		
         add_filter('query_vars', array(self::$calledClassName, 'addQueryVars'));
         add_action('parse_query', array(self::$calledClassName, 'processQueryArg'));
 
@@ -202,8 +211,13 @@ class CMPopUpBannersBackend {
         $baseColumns = $columns;
         $columns = array(
             'cb'     => '<input type="checkbox" />',
-            'title'  => __('Item name'),
-            'global' => __('Global'),
+            'post_id'  => __('ID'),
+            'title'  => __('Campaign Title'),
+            'type'  => __('<span style="color:#999;">Type</span><br><span style="color:green;">(Only in Pro)</span>'),
+            'zindex'  => __('<span style="color:#999;">Z-index</span><br><span style="color:green;">(Only in Pro)</span>'),
+            'stickybutton'  => __('<span style="color:#999;">Sticky Button</span><br><span style="color:green;">(Only in Pro)</span>'),
+            'global' => __('Show On'),
+            'disable' => __('Disable'),
             'date'   => __('Date'),
         );
 
@@ -226,16 +240,31 @@ class CMPopUpBannersBackend {
 	*/
 
 	public static function editScreenColumnsContent( $column, $post_id ) {
+		$campaignData = CMPOPFLY_Import_Export::prepareHelpItemData($post_id, FALSE);
+		$campaignMeta = $campaignData['_cm_advertisement_items_custom_fields'][0];
         switch ( $column ) {
+            case 'post_id' :
+				echo $post_id;
+				break;
+			case 'type' :
+				echo '<span style="color:#999;">Pop-Up</span>';
+                break;
+			case 'zindex' :
+				echo '<span style="color:#999;">100001</span>';
+				break;
+			case 'stickybutton' :
+				echo '<span style="color:#999;">Disable</span>';
+				break;
             case 'global' :
-                $helpItemMeta = CMPOPFLY_Import_Export::prepareHelpItemData( $post_id, FALSE );
-                $status       = CMPopUpBanners::__( 'No' );
-				//if ( isset( $helpItemMeta[ 'cm-campaign-show-allpages' ] ) && $helpItemMeta[ 'cm-campaign-show-allpages' ] ) {
-                if ( isset( $helpItemMeta[ '_cm_advertisement_items_custom_fields' ][0][ 'cm-campaign-show-allpages' ]) && $helpItemMeta[ '_cm_advertisement_items_custom_fields' ][0][ 'cm-campaign-show-allpages' ]) {
-                    $status = CMPopUpBanners::__( 'Yes' );
+                $status = '-';
+                if(isset( $campaignMeta['cm-campaign-show-allpages']) && $campaignMeta['cm-campaign-show-allpages']) {
+                    $status = '<a href="'.get_site_url().'" target="_blank">Every Page</a>';
                 }
                 echo $status;
                 break;
+			case 'disable' :
+				echo $campaignMeta['cm-campaign-widget-disable'] == '0' ? CMPopUpBanners::__( 'No' ) : CMPopUpBanners::__( 'Yes' );
+				break;
         }
     }
 
@@ -928,7 +957,9 @@ class CMPopUpBannersBackend {
                 $isNotSubPage = $isExternalPage || strpos($item[2], '.php') !== FALSE;
                 $url = $isNotSubPage ? $slug : get_admin_url(null, 'admin.php?page=' . $slug);
                 $target = $isExternalPage ? '_blank' : '';
-                $submenus[$item[0]] = '<a href="' . $url . '" target="' . $target . '" class="' . ($isCurrent ? 'current' : '') . '">' . strip_tags($item[0]) . '</a>';
+				if($item[3] != '') {
+					$submenus[$item[0]] = '<a href="' . $url . '" target="' . $target . '" class="' . ($isCurrent ? 'current' : '') . '">' . strip_tags($item[0]) . '</a>';
+				}
             }
         }
         return $submenus;
@@ -960,11 +991,13 @@ class CMPopUpBannersBackend {
                 }
 
                 $url = (strpos($slug, '.php') !== false || strpos($slug, 'http://') !== false) ? $slug : $subpageUrl;
-                $submenus[] = array(
-                    'link'    => $url,
-                    'title'   => strip_tags($sub_item[0]),
-                    'current' => $isCurrent
-                );
+				if($sub_item[3] != '') {
+					$submenus[] = array(
+						'link'    => $url,
+						'title'   => strip_tags($sub_item[0]),
+						'current' => $isCurrent
+					);
+				}
             }
             include self::$viewsPath . 'nav.phtml';
         }
@@ -1096,6 +1129,7 @@ class CMPopUpBannersBackend {
         wp_enqueue_script('jquery-ui-dialog');
         wp_enqueue_script('jquery-ui-datepicker');
         wp_enqueue_script('jquery-ui-tooltip');
+		wp_enqueue_script( 'jquery-ui-accordion' );
 
         /*
          * enque jQuery UI styles
