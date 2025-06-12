@@ -257,6 +257,11 @@ if (!class_exists(__NAMESPACE__ . '\CmindsFreePackagePOP')) {
          * @since  1.1.2
          */
         function submitUninstallReason() {
+			
+			if(!current_user_can('manage_options')) {
+				exit;
+			}
+			
             if (empty($_POST['plugin_slug']) || empty($_POST['deactivation_reason'])) {
                 exit;
             }

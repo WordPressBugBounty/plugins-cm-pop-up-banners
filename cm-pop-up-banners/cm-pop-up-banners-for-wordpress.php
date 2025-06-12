@@ -4,7 +4,7 @@ Plugin Name: CM Pop-Up Banners for WordPress
 Plugin URI: https://www.cminds.com/wordpress-plugins-library/pop-up-banners-plugin-for-wordpress/
 Description: This plugin adds the option to add the on-site Pop-Up or Fly In Bottom Ads
 Author: CreativeMindsSolutions
-Version: 1.8.3
+Version: 1.8.4
 */
 
 namespace com\cminds\popupfly;
@@ -99,7 +99,7 @@ class CMPopUpBanners {
          * @since 1.0
          */
         if (!defined('CMPOPFLY_VERSION')) {
-            define('CMPOPFLY_VERSION', '1.8.1');
+            define('CMPOPFLY_VERSION', '1.8.4');
         }
 
         /**
