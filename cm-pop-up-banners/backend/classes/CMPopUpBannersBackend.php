@@ -767,6 +767,10 @@ class CMPopUpBannersBackend {
      * Outputs the preview
      */
     public static function outputPreview() {
+		
+		if(!current_user_can('manage_options')) {
+			exit;
+		}
 
         $helpItemPostId = filter_input(INPUT_GET, 'campaign_id');
 
