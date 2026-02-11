@@ -4,7 +4,7 @@ Author: CreativeMindsSolutions
 Contributors: CreativeMindsSolutions
 Tags: popup, popups, popup builder, popup maker, wp popup
 Requires at least: 5.4.0
-Tested up to: 6.8
+Tested up to: 6.9
 Stable Tag: 1.8.5
 Requires PHP: 5.2.4
 License: GPLv2 or later
@@ -26,7 +26,7 @@ Furthermore, users have the option to select the post type where the popup will 
 
 The [Popup Maker Plugin Premium editions](https://www.cminds.com/wordpress-plugins-library/cm-pop-up-banners-plugin-for-wordpress/) includes even more powerful features, such as: forms builder and forms support, more advanced popup trigers, more options to manage popup campaigns, statistics and much more.
 
-### Popup Maker Plugin Introduction Video
+### Popup Maker Plugin Introduction Video (Pro Version)
 
 [vimeo https://vimeo.com/128559587]
 
