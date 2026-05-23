@@ -4,8 +4,8 @@ Author: CreativeMindsSolutions
 Contributors: CreativeMindsSolutions
 Tags: popup, popups, popup builder, popup maker, wp popup
 Requires at least: 5.4.0
-Tested up to: 6.9
-Stable Tag: 1.8.5
+Tested up to: 7.0
+Stable Tag: 1.8.6
 Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
