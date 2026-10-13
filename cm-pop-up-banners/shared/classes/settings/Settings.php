@@ -44,6 +44,9 @@ if (!class_exists('Settings')) {
         }
 
         public static function render() {
+            if (!current_user_can('manage_options')) {
+                return '';
+            }
             $result = static::saveOptions();
             $messages = $result['messages'] ?? '';
 
@@ -58,11 +61,18 @@ if (!class_exists('Settings')) {
          * Function responsible for saving the options
          */
         public static function saveOptions() {
+            if (!current_user_can('manage_options')) {
+                return;
+            }
             $messages = '';
             $post_prefiltered = filter_input_array(INPUT_POST);
             if (empty($post_prefiltered)) {
                 return;
             }
+            if (!isset($_POST['_wpnonce']) || !is_string($_POST['_wpnonce'])) {
+                wp_die('Invalid security token.', '', array('response' => 403));
+            }
+            check_admin_referer('update-options');
             $post = array_map('stripslashes_deep', $post_prefiltered);
 
             /*
@@ -71,8 +81,6 @@ if (!class_exists('Settings')) {
             $is_settings_save = apply_filters(static::abbrev('_is_save_options'), isset($post[static::abbrev('_saveSettings')]), $post);
 
             if ($is_settings_save) {
-                check_admin_referer('update-options');
-
                 do_action(static::abbrev('_save_options_before'), $post, array(&$messages));
 
                 $options_names = apply_filters(static::abbrev('_thirdparty_option_names'), array_filter(array_keys($post), function ($k) {

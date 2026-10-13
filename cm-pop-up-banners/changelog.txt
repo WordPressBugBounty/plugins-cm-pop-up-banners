@@ -1,0 +1,131 @@
+CM Pop-Up Banners - Release History
+
+= 1.8.7 =
+Release Date: 11 Oct 2026
+* Security: Added manage_options capability checks to package registration, deregistration, and skip-registration AJAX handlers.
+* Security: Restricted package administration shortcodes and registration helpers to users with the manage_options capability.
+* Security: Added plugin- and box-specific nonce checks to guide, upgrade, and registration visibility changes.
+* Security: Added nonce verification to registration, deregistration, skip-registration, and deactivation-feedback AJAX requests.
+* Security: Restricted the settings page and settings saves to users with the manage_options capability.
+* Security: Required nonce verification before settings save callbacks run.
+* Updated registration and feedback forms and visibility links to send the required security tokens.
+* Synchronized the plugin header, version constant, package configuration, and stable tag to 1.8.7.
+
+= 1.8.5 =
+Release Date: 15 Jul 2025
+* Added restriction so that only admin user able to see preview of popup campaign
+
+= 1.8.4 =
+Release Date: 12 Jun 2025
+* Added restrictions for deactivating a plugin and send reason should be admin user
+
+= 1.8.3 =
+Release Date: 27 May 2025
+* Added new settings as a showcase
+
+= 1.8.2 =
+Release Date: 15 May 2025
+* Updated pricing
+
+= 1.8.1 =
+* Bugfix related to popup load with specific post/page
+
+= 1.8.0 =
+Release Date: 14 Apr 2025
+* Improvements
+
+= 1.7.10 =
+Release Date: 14 Mar 2025
+* Updated pricing
+
+= 1.7.9 =
+Release Date: 07 Mar 2025
+* Fixed PHP notices 
+
+= 1.7.8 =
+Release Date: 06 Mar 2025
+* Fixed fatal error related to get_current_user() function
+
+= 1.7.7 =
+Release Date: 07 Jan 2025
+* Fixed vulnerability issue
+
+= 1.7.6 =
+Release Date: 18 Nov 2024
+* Fixed security (medium) issue
+
+= 1.7.5 =
+Release Date: 06 Nov 2024
+* Added pro version settings as a showcase
+
+= 1.7.4 =
+Release Date: 09 Oct 2024
+* Fixed security issues
+
+= 1.7.3 =
+Release Date: 19 Aug 2024
+* Used wp_add_inline_script() instead of wp_localize_script()
+
+= 1.7.2 =
+Release Date: 05 Aug 2024
+* Resolved calling get_class() without arguments is deprecated issue
+
+= 1.7.1 =
+Release Date: 30 Jul 2024
+* Fixed multiple encoded content issue with popup
+
+= 1.7.0 =
+Release Date: 22 Jul 2024
+* Fixed content issue with popup
+
+= 1.6.9 =
+Release Date: 10 Jul 2024
+* Fixed encoded content issue with popup content
+
+= 1.6.8 =
+Release Date: 23 Jun 2024
+* Fixed vulnerability issue with popup content
+
+= 1.6.7 =
+Release Date: 13 Jun 2024
+* Fixed bug related to strip HTML tags from banner content
+
+= 1.6.6 =
+Release Date: 31 May 2024
+* Fixed old saved campaign data
+
+= 1.6.5 =
+Release Date: 25 May 2024
+* Fixed bug
+
+= 1.6.4 =
+Release Date: 21 May 2024
+* Fixed bug related to activity
+
+= 1.6.3 =
+Release Date: 18 May 2024
+* Fixed security issues
+
+= 1.6.2 =
+Release Date: 28 December 2023
+* Fixed error
+
+= 1.6.1 =
+Release Date: 25 December 2023
+* Update package info
+
+= 1.6.0 =
+Release Date: 25 Apr 2023
+* Fixed bug related to statistics
+
+= 1.5.10 =
+Release Date: 22nd Mar 2023
+* Update package info
+
+= 1.5.9 =
+Release Date: 2nd Nov 2022
+* Update support links
+
+= 1.5.8 =
+Release Date: 2nd Nov 2022
+* Update shortcode in settings view file

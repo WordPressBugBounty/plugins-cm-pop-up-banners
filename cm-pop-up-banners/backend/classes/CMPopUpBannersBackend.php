@@ -925,7 +925,7 @@ class CMPopUpBannersBackend {
         do_action('cm_popflyin_submenu_page');
         add_submenu_page(CMPOPFLY_SLUG_NAME, 'Statistics', 'Statistics', 'edit_posts', self::$statisticsPageSlug, array(self::$calledClassName, 'renderAdminPage'));
         add_submenu_page(CMPOPFLY_SLUG_NAME, 'Import/Export', 'Import/Export', 'edit_posts', self::$importExportPageSlug, array(self::$calledClassName, 'renderAdminPage'));
-		add_submenu_page(CMPOPFLY_SLUG_NAME, 'Settings', 'Settings', 'edit_posts', self::$settingsPageSlug, array(self::$calledClassName, 'renderAdminPage'));
+		add_submenu_page(CMPOPFLY_SLUG_NAME, 'Settings', 'Settings', 'manage_options', self::$settingsPageSlug, array(self::$calledClassName, 'renderAdminPage'));
         add_filter('views_edit-' . CMPopUpBannersShared::POST_TYPE, array(self::$calledClassName, 'filterAdminNav'), 10, 1);
         add_filter('views_edit-' . CMPopUpBannersShared::POST_TYPE_TEMPLATE, array(self::$calledClassName, 'filterAdminNav'), 10, 1);
     }
@@ -1344,6 +1344,13 @@ class CMPopUpBannersBackend {
         $postData = filter_input_array(INPUT_POST);
 
         if ($page == 'cm-popupflyin-settings' && !empty($postData)) {
+            if (!current_user_can('manage_options')) {
+                wp_die('Forbidden.', '', array('response' => 403));
+            }
+            if (!isset($_POST['_wpnonce']) || !is_string($_POST['_wpnonce'])) {
+                wp_die('Invalid security token.', '', array('response' => 403));
+            }
+            check_admin_referer('update-options');
             do_action('cm_popupflyin_save_settings', $postData);
 
             //$params = CMPOPFLY_Settings::processPostRequest();
